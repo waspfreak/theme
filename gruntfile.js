@@ -15,8 +15,15 @@ module.exports = function (grunt) {
       uglify: {
        files: ["js/*.js", "!js/*.min.js"],
        tasks: ['uglify']
-     }
-    },
+     },
+     imagemin: {
+      files: ['img/*.{png,jpg,gif,svg}'],
+      tasks: ['newer:imagemin'], //use newer here
+      options: {
+        spawn: false,
+      }
+    }
+  },
     // Sass task config
     sass: {
         dev: {
@@ -73,13 +80,24 @@ module.exports = function (grunt) {
           }
         }
       },
-      //Uglify task config
+      //Uglify task config (JS compress)
       uglify: {
         build: {
           src: 'js/custom.js',//Ruta de fichero de entrada
           dest: 'js/custom.min.js'//Ruta del fichero minificado
         }
-      }
+      },
+      //Imagemin task config
+      imagemin: {
+          main: {
+            files: [{
+              expand: true,
+              cwd: 'img/', //todas las imágenes de esta ruta
+              src: ['**/*.{png,jpg,gif,.svg}'], //patrón de tipos de imagen
+              dest: 'img/' //carpeta destino una vez optimizadas
+            }]
+          }
+       }
 
     });
 
@@ -88,7 +106,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-newer');
 
  //Tarea por defecto
  grunt.registerTask('default', ['browserSync', 'watch']);
