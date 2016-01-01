@@ -1,11 +1,10 @@
+.parallax-container {
+     height: 300px;
+  }
 
-body {
-  background: #ccc; }
-
-header{
-  font-size: 21px;
-}
-h1{ font-size: 12px;}
-h2{
-  font-size: 13px;
-}
+nav {
+      background-color: #ccc;
+      width: 100%;
+      height: 56px;
+      line-height: 56px;
+  }

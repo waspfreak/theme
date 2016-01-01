@@ -76,7 +76,7 @@ module.exports = function (grunt) {
         },
         target: {
           files: {//Fichero combinado   //Ficheros que vamos a combinar, 2 .css
-                  'css/allcss.min.css': ['css/custom.css', 'css/materialize.min.css']
+                  'css/allcss.min.css': ['css/custom.css', 'css/materialize.css']
           }
         }
       },
