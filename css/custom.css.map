@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AACA,IAAK;EACH,UAAU,EAAE,IAAI;;AAElB,MAAM;EACJ,SAAS,EAAE,IAAI;;AAEjB,EAAE;EAAE,SAAS,EAAE,IAAI",
+"mappings": "AACA,IAAK;EACH,UAAU,EAAE,IAAI;;AAElB,MAAM;EACJ,SAAS,EAAE,IAAI;;AAEjB,EAAE;EAAE,SAAS,EAAE,IAAI;;AACnB,EAAE;EACA,SAAS,EAAE,IAAI",
 "sources": ["../scss/custom.scss"],
 "names": [],
 "file": "custom.css"
